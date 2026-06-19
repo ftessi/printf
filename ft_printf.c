@@ -6,7 +6,7 @@
 /*   By: ftessi <ftessi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 16:29:45 by ftessi            #+#    #+#             */
-/*   Updated: 2026/06/19 02:32:50 by ftessi           ###   ########.fr       */
+/*   Updated: 2026/06/19 17:30:59 by ftessi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int	ft_handle_conversion(char spec, va_list *ap)
 	else if (spec == 's')
 		return (ft_putstr(va_arg(*ap, char *)));
 	else if (spec == 'd')
-		return (ft_putnbr_recursive(va_arg(*ap, long)));
+		return (ft_putnbr_recursive((long)va_arg(*ap, int)));
 	else if (spec == 'i')
-		return (ft_putnbr_recursive(va_arg(*ap, long)));
+		return (ft_putnbr_recursive((long)va_arg(*ap, int)));
 	else if (spec == 'u')
 		return (ft_putunsgd_recursive(va_arg(*ap, unsigned int)));
 	else if (spec == 'x')

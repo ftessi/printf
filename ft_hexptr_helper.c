@@ -6,7 +6,7 @@
 /*   By: ftessi <ftessi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 01:08:29 by ftessi            #+#    #+#             */
-/*   Updated: 2026/06/19 02:31:39 by ftessi           ###   ########.fr       */
+/*   Updated: 2026/06/19 17:35:28 by ftessi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,13 @@ int	ft_putptr(void *ptr)
 {
 	int	count;
 
-	count = write(1, "0x", 2);
-	count += ft_puthex((unsigned long)ptr, "0123456789abcdef");
+	count = 0;
+	if (ptr == 0)
+		count += write(1, "(nil)", 5);
+	else
+	{
+		count = write(1, "0x", 2);
+		count += ft_puthex((unsigned long)ptr, "0123456789abcdef");
+	}
 	return (count);
 }
